@@ -1,8 +1,9 @@
 package DateTime;
 
+import lombok.var;
+
 import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.time.LocalDate;
+import java.time.*;
 import java.util.Calendar;
 
 public class dateTime {
@@ -26,6 +27,10 @@ public class dateTime {
         // Using localDate
         System.out.println("The localdate using LocalDate.now() " + LocalDate.now()); // 2022-03-31
         System.out.println("The localdate using LocalDate.now().plusDays(10) " + LocalDate.now().plusDays(10)); // 2022-04-10
+
+        final var clock = Clock.systemUTC();
+        final var nowLocal = LocalDateTime.now(clock);
+        System.out.println("The localdate using now.toInstant(ZoneOffset.UTC) " + nowLocal.toInstant(ZoneOffset.UTC)); // 2022-04-10
 
     }
 }
