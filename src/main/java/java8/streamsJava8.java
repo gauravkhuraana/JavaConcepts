@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.*;
 
-public class functionalProgramming {
+public class streamsJava8 {
 
     WebDriver driver;
 
@@ -58,11 +58,12 @@ public class functionalProgramming {
 
         driver.findElements(By.tagName("a"))
                 .stream()
-                .map(s->s.getText())// to get the elements as String
+                .map(e->e.getText())// to get the elements as String
+                .filter(e->e.isEmpty())
                 .distinct() // to remove duplicates
                 .sorted() // lets sort them as well
-                .filter(s->s.startsWith("C")||s.startsWith("D"))
-                .forEach(s-> System.out.println(s));
+                .filter(e->e.startsWith("C")||e.startsWith("D"))
+                .forEach(e-> System.out.println(e));
                  // or you can write like
                  // .forEach(System.out::println)
 
