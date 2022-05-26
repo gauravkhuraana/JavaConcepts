@@ -1,4 +1,4 @@
-package java8.anonymousInnerClass;
+package java8.anonymousInnerClassAndLambdas;
 
 @FunctionalInterface
 public interface iOneParamOneBooleanReturn {

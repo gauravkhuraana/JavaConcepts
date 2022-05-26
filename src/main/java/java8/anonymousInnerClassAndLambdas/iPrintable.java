@@ -1,4 +1,4 @@
-package java8.anonymousInnerClass;
+package java8.anonymousInnerClassAndLambdas;
 
 // Writing this annotation which comes from java 8 helps us
 // to have just one method as unimplemented or abstract and we can use lambda easily

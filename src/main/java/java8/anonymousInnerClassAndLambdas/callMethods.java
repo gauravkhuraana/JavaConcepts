@@ -1,6 +1,4 @@
-package java8.anonymousInnerClass;
-
-import com.google.gson.internal.bind.util.ISO8601Utils;
+package java8.anonymousInnerClassAndLambdas;
 
 public class callMethods {
 
