@@ -1,4 +1,6 @@
-package java8.anonymousInnerClassAndLambdas;
+package java8.Concepts;
+
+import java.util.function.Consumer;
 
 public class callMethods {
 
@@ -56,5 +58,35 @@ public class callMethods {
 
         iOneParamOneBooleanReturn iOneParamOneBooleanReturn = x -> x > 10;
         System.out.println(iOneParamOneBooleanReturn.oneParamOneReturn(20));
+
+
+        iGenericInterface<String> obj4 = (a) -> System.out.println("HAri Hari bol " + a);
+        obj4.test("Bande");
+
+
+              // old way
+            Animal animal = new Cat();
+            animal.run();
+            Animal animal1 = new Dog();
+            animal1.run();
+
+            // passing implementation directly
+            perform(new Dog());
+
+            perform(()-> System.out.println("Giving my own implementation"));
+
+            stringOprations(s-> System.out.println(s.toLowerCase()),"Hari Bol");
+            stringOprations(s-> System.out.println(s.toUpperCase()),"Hare Krishna");
+
+    }
+
+    public static void perform(Animal animal)
+    {
+        animal.run();
+    }
+
+    public static void stringOprations(Consumer<String> con,String s)
+    {
+        con.accept(s);
     }
 }
