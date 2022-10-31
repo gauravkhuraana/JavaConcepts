@@ -2,6 +2,7 @@ package DateTime;
 
 import lombok.var;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.*;
 import java.util.Calendar;
@@ -32,5 +33,12 @@ public class dateTime {
         final var nowLocal = LocalDateTime.now(clock);
         System.out.println("The localdate using now.toInstant(ZoneOffset.UTC) " + nowLocal.toInstant(ZoneOffset.UTC)); // 2022-04-10
 
+
+        System.out.println("LocalDateTime.now(ZoneOffset.UTC) = "+  LocalDateTime.now(ZoneOffset.UTC));
+        System.out.println("LocalDateTime.now(ZoneOffset.UTC) = "+  LocalDateTime.now());
+
+        DateFormat dateFormat = new SimpleDateFormat("d MMMM yyyy EEEE");
+        System.out.println(" DateFormat dateFormat = new SimpleDateFormat('d MMMM yyyy EEEE');\n "+ dateFormat.toString());
     }
+
 }
