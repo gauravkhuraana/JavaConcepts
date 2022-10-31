@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
-import javax.xml.ws.WebEndpoint;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
