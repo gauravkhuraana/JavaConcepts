@@ -1,11 +1,13 @@
 package DateTime;
 
-import lombok.var;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class dateTime {
 
@@ -29,16 +31,43 @@ public class dateTime {
         System.out.println("The localdate using LocalDate.now() " + LocalDate.now()); // 2022-03-31
         System.out.println("The localdate using LocalDate.now().plusDays(10) " + LocalDate.now().plusDays(10)); // 2022-04-10
 
-        final var clock = Clock.systemUTC();
-        final var nowLocal = LocalDateTime.now(clock);
+        final Clock clock = Clock.systemUTC();
+        final LocalDateTime nowLocal = LocalDateTime.now(clock);
         System.out.println("The localdate using now.toInstant(ZoneOffset.UTC) " + nowLocal.toInstant(ZoneOffset.UTC)); // 2022-04-10
 
 
-        System.out.println("LocalDateTime.now(ZoneOffset.UTC) = "+  LocalDateTime.now(ZoneOffset.UTC));
-        System.out.println("LocalDateTime.now(ZoneOffset.UTC) = "+  LocalDateTime.now());
+        System.out.println("LocalDateTime.now(ZoneOffset.UTC) = "+  LocalDateTime.now(ZoneOffset.UTC)); //2023-02-09T08:37:47.765186
+        System.out.println("LocalDateTime.now() = "+  LocalDateTime.now());                             //2023-02-09T14:07:47.765186
 
-        DateFormat dateFormat = new SimpleDateFormat("d MMMM yyyy EEEE");
-        System.out.println(" DateFormat dateFormat = new SimpleDateFormat('d MMMM yyyy EEEE');\n "+ dateFormat.toString());
+        // to deal with various timezones
+        ZonedDateTime zonedDateTime = ZonedDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss z");
+        System.out.println("DateTimeFormatter.ofPattern(yyyy-MM-dd HH:mm:ss z) " + zonedDateTime.format(formatter)); // 2023-02-09 14:07:47 IST
+
+        Locale locale = new Locale("fr", "FR");
+        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MONTH_FIELD,locale);
+        System.out.println(dateFormat.format(new Date()));  // 9 févr. 2023
+
+
+        String pattern = "dd-MMM-yyyy HH:mm z";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern, new Locale("fr", "FR"));
+        String date = simpleDateFormat.format(new Date());
+        System.out.println(date); // 09-févr.-2023 14:07 IST
+
+        pattern = "hh:mm,dd-MMM-yyyy z"; // hh is 12 hours format
+        simpleDateFormat = new SimpleDateFormat(pattern, new Locale("fr", "FR"));
+        date = simpleDateFormat.format(new Date());
+        System.out.println(date); // 02:07,09-févr.-2023 IST
+
+        pattern = "HH:mm,dd-MMM-yyyy z"; // HH is 24 hours format
+        simpleDateFormat = new SimpleDateFormat(pattern, new Locale("fr", "FR"));
+        date = simpleDateFormat.format(new Date());
+        System.out.println(date); // 14:11,09-févr.-2023 IST
+
+        pattern = "HH:mm,d-MMM-yyyy z"; // HH is 24 hours format
+        simpleDateFormat = new SimpleDateFormat(pattern, new Locale("fr", "FR"));
+        date = simpleDateFormat.format(new Date());
+        System.out.println(date); // 14:11,09-févr.-2023 IST
     }
 
 }
