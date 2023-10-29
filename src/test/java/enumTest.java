@@ -18,10 +18,6 @@ public class enumTest {
 
         // with lombok
         System.out.println(" getting a value with minimal code using lombok " + withLombok.IND); // will get us first value
-        System.out.println(" getting a value with minimal code using lombok " + withLombok.IND.getCode());
-        System.out.println(" getting a value with minimal code using lombok " + withLombok.IND.getCountry());
-
-
 
     }
 

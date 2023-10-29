@@ -1,7 +1,10 @@
+import org.testng.annotations.Test;
+
 import java.util.Scanner;
 
 public class test {
-    public static void main(String[] args) {
+        @Test
+    public void test(){
         Scanner scanner = new Scanner(System.in);
 
         String string = scanner.next();
