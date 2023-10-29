@@ -8,6 +8,7 @@ pool:
 
 steps:
 - task: Maven@3
+  continueOnError: true
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
@@ -17,3 +18,9 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean test'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: 'target'
+    artifact: 'TargetFolderDetails'
+    publishLocation: 'pipeline'
