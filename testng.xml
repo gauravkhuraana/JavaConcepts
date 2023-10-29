@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="D:/Automation/JavaConcepts">
+        <classes>
+            <class name="AdvanceConcepts.staticAndNonStatic">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="CommonQuestions.LeftShiftCharacters">
+                <methods>
+                    <include name="letShift"/>
+                </methods>
+            </class>
+            <class name="CommonQuestions.PatternTraingle">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="DataStructures.hashMapExamples">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="DateTime.dateTime">
+                <methods>
+                    <include name="test"/>
+                    <include name="getDateWithSpecifiedFormat"/>
+                </methods>
+            </class>
+            <class name="ErrorHandling.allAboutExceptions">
+                <methods>
+                    <include name="produceException"/>
+                </methods>
+            </class>
+            <class name="MethodChainingConcepts.MethodChaining">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="MethodChainingConcepts.NormalJavaMethod">
+                <methods>
+                    <include name="Test"/>
+                </methods>
+            </class>
+            <class name="OOPs.Polymorphism">
+                <methods>
+                    <include name="test"/>
+                    <include name="test1"/>
+                </methods>
+            </class>
+            <class name="Random.random">
+                <methods>
+                    <include name="randomNumbers"/>
+                </methods>
+            </class>
+            <class name="RegularExpression.patternMatching">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="Strings.Strings">
+                <methods>
+                    <include name="stringFormat"/>
+                    <include name="stringFunctions"/>
+                    <include name="stringSplit"/>
+                </methods>
+            </class>
+            <class name="java8.Concepts.ArrayList">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="java8.Concepts.TestAutomationExample_AmazonLinks">
+                <methods>
+                    <include name="printallLinks"/>
+                </methods>
+            </class>
+            <class name="java8.Concepts.callMethods">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="java8.Concepts.selectDropDown">
+                <methods>
+                    <include name="selectionTest"/>
+                </methods>
+            </class>
+            <class name="java8.streamsJava8">
+                <methods>
+                    <include name="captureAllLinksFromAmazon"/>
+                    <include name="captureAllLinksFromAmazonViaJava8"/>
+                </methods>
+            </class>
+            <class name="javaFakerAPI.fakerAPIRandom">
+                <methods>
+                    <include name="generateRandomNumbers"/>
+                    <include name="range"/>
+                </methods>
+            </class>
+            <class name="javaFakerAPI.fakerStringsAsPerLocale">
+                <methods>
+                    <include name="withoutLocale"/>
+                    <include name="withLocaleConstructor"/>
+                </methods>
+            </class>
+            <class name="javaFakerAPI.faker_letterify_numerify_bothify">
+                <methods>
+                    <include name="letterify"/>
+                    <include name="numerify"/>
+                    <include name="bothify"/>
+                    <include name="bothifyCapital"/>
+                </methods>
+            </class>
+            <class name="json.jsonParsing">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
