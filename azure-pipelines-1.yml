@@ -27,3 +27,8 @@ steps:
     targetPath: 'target'
     artifact: 'targetfolderdetails'
     publishLocation: 'pipeline'
+
+- task: PublishHtmlReport@1
+  displayName: 'HTML Report'
+  inputs:
+    reportDir: 'target/surefire-reports/emailable-report.html' 
