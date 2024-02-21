@@ -3,9 +3,6 @@
 trigger:
 - main
 
-pool:
-  vmImage: windows-latest
-
 steps:
 - task: configuration@1
   inputs:
