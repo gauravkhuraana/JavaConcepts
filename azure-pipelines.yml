@@ -7,6 +7,12 @@ pool:
   vmImage: windows-latest
 
 steps:
+- task: configuration@1
+  inputs:
+    connection: 'lambdatestconnection'
+    isTunnelActivate: false
+    isAppAutomate: false
+    isSmartUI: true
 - task: Maven@3
   continueOnError: true
   inputs:
@@ -17,10 +23,12 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'clean test'
+    goals: ''
 
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: 'target'
     artifact: 'TargetFolderDetails'
     publishLocation: 'pipeline'
+
+- task: LambdatestResults@1
