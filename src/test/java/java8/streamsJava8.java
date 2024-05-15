@@ -17,8 +17,6 @@ public class streamsJava8 {
     @Test
     public void captureAllLinksFromAmazon()
     {
-        //https://www.youtube.com/watch?v=McsieQgRxqg following this
-        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("https://amazon.in");
 
@@ -52,7 +50,6 @@ public class streamsJava8 {
     @Test
     public void captureAllLinksFromAmazonViaJava8()
     {
-        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("https://amazon.in");
 

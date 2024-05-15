@@ -86,7 +86,6 @@ public class dateTime {
         TimeZone timeZone = TimeZone.getDefault();
         String systemTimeZone = timeZone.getID();
         Calendar calendar = Calendar.getInstance(timeZone);
-        System.out.println(timeZone);
         System.out.println(systemTimeZone); // Asia/Calcutta
         System.out.println(calendar.getTimeZone());
 
