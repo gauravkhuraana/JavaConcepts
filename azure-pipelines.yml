@@ -3,17 +3,38 @@
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
-
 steps:
+- task: configuration@1
+  inputs:
+    connection: 'lambdatestconnection'
+    isTunnelActivate: false
+    isAppAutomate: false
+    isSmartUI: true
 - task: Maven@3
+  continueOnError: true
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
+    jdkVersionOption: '1.11'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+    goals: 'clean test'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: 'target'
+    artifact: 'TargetFolderDetails'
+    publishLocation: 'pipeline'
+
+- task: PublishHtmlReport@1
+  displayName: 'HTML Report'
+  inputs:
+    reportDir: 'target/surefire-reports/emailable-report.html'
+
+- task: PublishAllureReport@1
+  displayName: "publish allure report"
+  inputs:
+    allureVersion: "2.27.0"
+    testResultsDir: "target/allure-results"
