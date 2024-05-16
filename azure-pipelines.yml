@@ -4,12 +4,7 @@ trigger:
 - main
 
 steps:
-- task: configuration@1
-  inputs:
-    connection: 'lambdatestconnection'
-    isTunnelActivate: false
-    isAppAutomate: false
-    isSmartUI: true
+
 - task: Maven@3
   continueOnError: true
   inputs:
